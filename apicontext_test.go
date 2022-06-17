@@ -563,9 +563,9 @@ func TestApiContext_UseScopeDataAsHeader(t *testing.T) {
 	ctx := setupTestContext()
 	err := ctx.StoreScopeData("token", "GyFqKRl0cxTwwi1zdONvUnwbObmm6brA")
 
-	err = ctx.ISetHeaderWithValueFromScope("token")
+	err = ctx.ISetHeaderWithValueFromScope("API-TOKEN", "token")
 
 	assert.Nil(t, err)
 	assert.Equal(t, 1, len(ctx.headers))
-	assert.Equal(t, "GyFqKRl0cxTwwi1zdONvUnwbObmm6brA", ctx.headers["token"])
+	assert.Equal(t, "GyFqKRl0cxTwwi1zdONvUnwbObmm6brA", ctx.headers["API-TOKEN"])
 }

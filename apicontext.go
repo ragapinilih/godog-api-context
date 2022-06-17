@@ -136,8 +136,8 @@ func (ctx *ApiContext) ISetHeaderWithValue(name string, value string) error {
 }
 
 // ISetHeaderWithValueFromScope Step that add a new header to the current request from scope.
-func (ctx *ApiContext) ISetHeaderWithValueFromScope(name string) error {
-	ctx.headers[name] = ctx.scope[name]
+func (ctx *ApiContext) ISetHeaderWithValueFromScope(headerName, scopeName string) error {
+	ctx.headers[headerName] = ctx.scope[scopeName]
 	return nil
 }
 
