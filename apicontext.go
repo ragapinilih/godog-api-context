@@ -86,7 +86,7 @@ func (ctx *ApiContext) InitializeScenario(s *godog.ScenarioContext) {
 	s.BeforeScenario(ctx.reset)
 
 	s.Step(`^I set header "([^"]*)" with value "([^"]*)"$`, ctx.ISetHeaderWithValue)
-	s.Step(`^I set header from scope "([^"]*)"`, ctx.ISetHeaderWithValueFromScope)
+	s.Step(`^I set header "([^"]*)" with value from scope "([^"]*)"`, ctx.ISetHeaderWithValueFromScope)
 	s.Step(`^I set headers to:$`, ctx.ISetHeadersTo)
 	s.Step(`^I send "([^"]*)" request to "([^"]*)" with form body::$`, ctx.ISendRequestToWithFormBody)
 	s.Step(`^I send "([^"]*)" request to "([^"]*)" with body:$`, ctx.ISendRequestToWithBody)
